@@ -20,7 +20,7 @@ def lambda_handler(event, context):
     s3_client = boto3.client('s3')
     rekognition_client = boto3.client('rekognition')
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('YourDynamoDBTableName')  # Replace with your table name
+    table = dynamodb.Table('ImageAnalysisResults')  # Replace with your table name
 
     # Get the S3 bucket name and object key from the event
     bucket_name = event['Records'][0]['s3']['bucket']['name']
